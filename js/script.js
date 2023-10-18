@@ -11,6 +11,7 @@ btn.addEventListener('click',function(){
     const squareNumber = 64;
     // Griglia
     const playground = document.getElementById('playground');
+    playground.innerHTML = ''
     // Stampa dei Quadrati
     for(let i = 0; i < squareNumber; i++){
         let square = drawSquare(i,squareNumber);
@@ -22,8 +23,11 @@ btn.addEventListener('click',function(){
 
 // FUNCTION STAMPA DEI QUADRATI
 function drawSquare(squareI,squareNumber){
+    const squareWidth = Math.sqrt(squareNumber);
     const square = document.createElement('div');
     square.classList.add('square');
+    square.style.width = `calc(100% / ${squareWidth})`;
+    square.style.height = square.style.width;
     square.innerHTML = squareI + 1;
     // ACTIVE SUL CLICK AL QUADRATOO
     square.addEventListener('click',function(){
