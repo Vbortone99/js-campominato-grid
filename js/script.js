@@ -13,13 +13,15 @@ btn.addEventListener('click',function(){
     const playground = document.getElementById('playground');
     // Stampa dei Quadrati
     for(let i = 0; i < squareNumber; i++){
-        let square = drawSquare(i);
+        let square = drawSquare(i,squareNumber);
         console.log(square);
+        // Aggiungi il quadrato
+        playground.append(square);
     }
 })
 
 // FUNCTION STAMPA DEI QUADRATI
-function drawSquare(squareI){
+function drawSquare(squareI,squareNumber){
     const square = document.createElement('div');
     square.classList.add('square');
     square.innerHTML = squareI + 1;
